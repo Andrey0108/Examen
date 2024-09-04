@@ -58,5 +58,3 @@ cuentaSchema.pre('save', async function (next) {
 })
 
 export const CuentaSchema = model('Cuenta', cuentaSchema)
-
-// ojala me vaya bien

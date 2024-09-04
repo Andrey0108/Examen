@@ -1,6 +1,5 @@
 import { Router } from 'express'
 import { CuentaController } from '../controllers/cuenta.controller.js'
-// rutas
 export const createCuentaRouter = ({ cuentaModel }) => {
   const cuentaRouter = Router()
 
