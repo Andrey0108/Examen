@@ -11,7 +11,7 @@ const server = new Server()
 const cuentaModel = new CuentaModel()
 
 server.app.get('/', (req, res) => {
-  res.send('Examen')
+  res.send('Examen04/09/2024')
 })
 server.app.use('/cuenta', createCuentaRouter({ cuentaModel }))
 

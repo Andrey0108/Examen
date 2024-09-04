@@ -1,5 +1,5 @@
 import { CuentaSchema } from '../schemas/cuenta.schema.js'
-
+// model cuenta
 export class CuentaModel {
   async get () {
     const data = await CuentaSchema.find()
