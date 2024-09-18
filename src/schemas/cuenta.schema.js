@@ -20,11 +20,19 @@ const cuentaSchema = new Schema({
     min: [0, 'El saldo no puede ser negativo'],
     default: 0
   },
+  sucursal: {
+    type: String
+  },
   claveAcceso: {
     type: String,
     minLength: [4, 'La clave de acceso debe tener al menos 4 caracteres']
+  },
+  consignaciones: {
+    type: Number,
+    default: 0
   }
 })
+// atributo donde se acumularan todas las consignacioneses que se han hecho, y un metodo que permita listar las consignacioneses
 
 // Realizar un autoincremetable en el campo numeroCuenta
 cuentaSchema.pre('save', async function (next) {
@@ -54,6 +62,7 @@ cuentaSchema.pre('save', async function (next) {
     numeroCuenta: -1
   })
   cuenta.numeroCuenta = ultimoRegistro ? ultimoRegistro.numeroCuenta + 1 : 1
+
   next()
 })
 

@@ -6,6 +6,8 @@ export const createCuentaRouter = ({ cuentaModel }) => {
   const cuentaController = new CuentaController({ cuentaModel })
 
   cuentaRouter.get('/', cuentaController.get)
+  cuentaRouter.get('/getbysucursal/:sucursal', cuentaController.getBySucursal)
+  cuentaRouter.get('/:numeroCuenta', cuentaController.getById)
   cuentaRouter.post('/', cuentaController.post)
   cuentaRouter.patch('/:numeroCuenta', cuentaController.patch)
   cuentaRouter.delete('/:numeroCuenta', cuentaController.delete)
